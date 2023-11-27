@@ -236,14 +236,6 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
         fail_silently=False,
     )
 
-
-
-
-
-
-
-
-
 class UsuarioListView(generics.ListCreateAPIView):
     queryset = Usuarios.objects.all()
     serializer_class = UsuarioSerializer
