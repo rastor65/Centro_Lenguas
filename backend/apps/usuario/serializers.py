@@ -4,14 +4,14 @@ from apps.usuario.models import *
 class UsuarioSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Usuario
+        model = Usuarios
         fields = [
-            'User_Username',
-            'User_Password',
+            'first_name',
+            'last_name',
+            'email',
+            'password',
+            'username',
             'User_Avatar',
-            'User_Nombres',
-            'User_Apellidos',
-            'User_Correo',
             'User_Documento',
             'Tipo_Documento',
             'Tipo_Genero'

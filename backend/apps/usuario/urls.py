@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -16,4 +17,10 @@ urlpatterns = [
 
     path('usuarioxlicencia', views.UsuarioxLicenciaListView.as_view(), name='usuarioxlicencia-list'),
     path('usuarioxlicencia/<int:pk>', views.UsuarioxLicenciaDetailView.as_view(), name='usuarioxlicencia-detail'),
+
+    path('registro/', RegistroView.as_view(), name='registro'),
+    path('auth/login/', AuthLogin.as_view(), name='auth_login'),
+    path('auth/logout/', LogoutView.as_view(), name='auth_logout'),
+    path('auth/reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
+
 ]

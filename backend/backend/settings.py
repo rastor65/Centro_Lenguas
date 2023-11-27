@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'apps.recurso',
     'apps.usuario',
     'apps.curso',
-    'apps.diagnostico'
+    'apps.diagnostico',
+    'apps.basemodel',
+    'django_rest_passwordreset',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'backend_bilingue',
+        'NAME': 'centro_lenguas',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -137,12 +139,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = False
+
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:4200",
     'http://localhost:8081',
 )
 
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'myproject.middleware.custom_exception_handler'
+    'EXCEPTION_HANDLER': 'backend.middleware.custom_exception_handler'
     
 }

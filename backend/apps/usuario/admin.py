@@ -4,5 +4,5 @@ from apps.usuario.models import *
 
 admin.site.register(Tipo_Documento)
 admin.site.register(Tipo_Genero)
-admin.site.register(Usuario)
+admin.site.register(Usuarios)
 admin.site.register(UsuarioxLicencia)
